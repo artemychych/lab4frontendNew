@@ -1,0 +1,163 @@
+//device specific variables
+$headers-font-size: 20px;
+$footer-font-size: 16px;
+$normal-font-size: 12px;
+$minimal-footer-header-width:600px;
+
+$header-space: 4em;
+$footer-space: 4em;
+
+$graph-size:600px;
+
+//general variables
+$background-color: #5E5B5B;
+$div-background-color: #474444;
+$font-color: #A5C25C;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+html{
+  font-family: Roboto, monospace;
+  font-size: $normal-font-size;
+  background: $background-color;
+  color: $font-color;
+  height: 100%;
+}
+body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#graph{
+  min-width: $graph-size;
+  min-height: $graph-size;
+}
+#header{
+  flex-shrink: 0;
+  font-size: $headers-font-size;
+  background: $div-background-color;
+  display: flex;
+  flex-direction: row;
+  height: $header-space;
+  min-width: $minimal-footer-header-width;
+}
+#footer{
+  flex-shrink: 0;
+  text-align: center;
+  font-size: $footer-font-size;
+  background: $div-background-color;
+  margin: 1% 0 0 0;
+  padding: 1em 0 0 0;
+  height: $footer-space;
+  min-width: $minimal-footer-header-width;
+}
+#names-sign{
+  display: table;
+  width: 30%;
+  margin: 0 0 0 1%;
+  height: 100%;
+}
+#var-sign{
+  display: table;
+  height: 100%;
+  width: 30%;
+  text-align: right;
+  margin: 0 1% 0 0;
+}
+#lab-sign{
+  display: table;
+  width: 40%;
+  text-align: center;
+  color: #A5C25C;
+  height: 100%;
+}
+#lab-sign span{
+  color: greenyellow;
+  font-style: italic;
+}
+#var-sign > div, #names-sign > div, #lab-sign > div{
+  display: table-cell;
+  vertical-align: middle;
+}
+#gitHub-img{
+  height: 2em;
+  width: 2em;
+}
+#root{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#main{
+  padding: 2em;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-signup {
+  width: 380px;
+  height: 480px;
+  position: relative;
+  margin: 3% auto;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.login-signup-form {
+  top: 180px;
+  position: absolute;
+  width: 280px;
+  transition: .5s;
+}
+
+#login-form, #signup-form{
+  display: flex;
+  flex-direction: column;
+}
+
+#login-form{
+  left: 50px;
+}
+
+#signup-form{
+  left: 450px;
+}
+#entry-form-graph{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.error-label{
+  color: crimson;
+  margin: 1em 0;
+  height: 1em;
+  width: 75%;
+}
+.result-table{
+  margin: 20px 0 0 0;
+  color: white;
+  width: 70%;
+  border-spacing: 2px;
+  border: 2px solid white;
+  border-collapse: collapse;
+}
+.result-table th{
+  background: #090909;
+  height: 50px;
+  border: 1px solid white;
+  width: 25%;
+  font-size: $footer-font-size;
+}
+.result-table td{
+  height: 50px;
+  text-align: center;
+  background: #151515;
+  border: 1px solid white;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  padding: 5px;
+  font-size: $footer-font-size;
+}

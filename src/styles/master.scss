@@ -1,0 +1,9 @@
+@media (min-width:1096px) {
+  @import './desktop', 'inputs';
+}
+@media (min-width:880px) and (max-width: 1096px) {
+  @import './tablet', 'inputs';
+}
+@media (max-width:880px) {
+  @import './mobile', 'inputs';
+}

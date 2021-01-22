@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import './styles/master.scss'
+import './styles/graph.scss'
+import {Route, Switch, Redirect } from "react-router-dom";
+import Welcome from "./components/pages/welcome";
+import Main from "./components/pages/main";
+import NotFound from "./components/errors/not-found";
+import Cookies from 'js-cookie'
+import history from './history';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    if(Cookies.get('is-logged-in')===null) Cookies.set('is-logged-in','false')
+
+    if(Cookies.get('is-logged-in')) history.push("/main")
+
+    return (
+        <div id={"main"}>
+            <Switch>
+                <Route exact path="/welcome" component={Welcome} />
+                <Route exact path="/main" component={Main} />
+                <Redirect from='/' to={'/welcome'}/>
+                <Route path='/notfound' component={NotFound} />
+                <Redirect from='*' to='/notfound' />
+            </Switch>
+        </div>
+
+    );
 }
 
 export default App;
